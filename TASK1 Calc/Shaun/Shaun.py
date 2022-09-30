@@ -14,7 +14,11 @@ layout = [[Txt('' * 10,background_color='black')],
 form = FlexForm('MY CALCULATOR',background_color='black', default_button_element_size=(5, 2),
                 auto_size_buttons=False, grab_anywhere=False)
 form.Layout(layout)
-
+def decimal_binary(num):
+          if num >= 1:
+                    DecimalToBinary(num // 2)
+           print(num % 2, end = '')
+          return num%2
 # Result Value
 Result = ''
 while True:
@@ -39,6 +43,11 @@ while True:
 
     elif button == 'Quit' or button == None:
         break
+    elif button =='Bin':
+                    
+                    form.find_element('input').Update(Result)
+                    Answer=decimal_binary(value)
+                    Result = Answer
     else:
         Result += button
         form.find_element('input').Update(Result)
