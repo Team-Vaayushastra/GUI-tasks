@@ -1,10 +1,11 @@
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 a = str(input("Enter circle color"))
 cap = cv2.VideoCapture(0)
 
-while (1):
+while True:
 
     # Take each frame
     _, frame = cap.read()
@@ -99,6 +100,8 @@ while (1):
             print(r)
             print(f"Center is ({x},{y})")
     cv2.imshow('gray',gray)
+    cv2.imshow('mask',mask)
+    cv2.imshow('mask_3',mask_3)
     # stacking up all three images together
     stacked = np.hstack((mask_3, output, res))
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -110,8 +113,9 @@ while (1):
             cv2.circle(frame, (x, y), r, (0, 255, 0), 4)
             cv2.rectangle(frame, (x - 5, y - 5), (x + 5, y + 5), (0, 128, 255), -1)
     cv2.imshow('Result', cv2.resize(stacked, None, fx=0.8, fy=0.8))
+    
     k = cv2.waitKey(1) & 0xFF
-    if k == 'q':
+    if k == 's':
         break
 
 cv2.destroyAllWindows()
