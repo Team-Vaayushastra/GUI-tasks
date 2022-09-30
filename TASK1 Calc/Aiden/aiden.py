@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
+    print("MY CALCULATOR")
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(410, 609)
@@ -180,12 +181,19 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
+        print("0")
         self.Displaylabel.setText(_translate("MainWindow", "0"))
+        print("CE")
         self.pushButton.setText(_translate("MainWindow", "CE"))
+        print("C")
         self.pushButton_2.setText(_translate("MainWindow", "C"))
+        print("/")
         self.pushButton_3.setText(_translate("MainWindow", "/"))
+        print("x")
         self.pushButton_4.setText(_translate("MainWindow", "x"))
+        print("=")
         self.pushButton_5.setText(_translate("MainWindow", "="))
+        print("-")
         self.pushButton_10.setText(_translate("MainWindow", "-"))
         self.pushButton_11.setText(_translate("MainWindow", "7"))
         self.pushButton_12.setText(_translate("MainWindow", "9"))
@@ -201,7 +209,12 @@ class Ui_MainWindow(object):
         self.pushButton_22.setText(_translate("MainWindow", "."))
         self.pushButton_23.setText(_translate("MainWindow", "sin"))
         self.pushButton_24.setText(_translate("MainWindow", "0"))
+        self.pushButton_25.setText(_translate("MainWindow", "+"))
+        self.pushButton_25.setText(_translate("MainWindow", "."))
+        self.pushButton_25.setText(_translate("MainWindow", "/"))
         self.pushButton_25.setText(_translate("MainWindow", "cos"))
+        self.pushButton_25.setText(_translate("MainWindow", "tan"))
+        self.pushButton_25.setText(_translate("MainWindow", ","))
 
 
 if __name__ == "__main__":
